@@ -1,0 +1,71 @@
+:root,
+[data-theme="default"] {
+  --color-primary: blue;
+  /* color contrasts */
+  --color-bg: white;
+  --color-contrast-lower: hsl(0, 0%, 95%);
+  --color-contrast-low: hsl(240, 1%, 83%);
+  --color-contrast-medium: hsl(240, 1%, 48%);
+  --color-contrast-high: hsl(240, 4%, 20%);
+  --color-contrast-higher: black;
+}
+
+[data-theme] {
+  background-color: var(--color-bg);
+  color: var(--color-contrast-high);
+}
+
+[data-theme="dark"] {
+  --color-primary: red;
+  /* color contrasts */
+  --color-bg: black;
+  --color-contrast-lower: hsl(240, 6%, 15%);
+  --color-contrast-low: hsl(252, 4%, 25%);
+  --color-contrast-medium: hsl(240, 1%, 57%);
+  --color-contrast-high: hsl(0, 0%, 89%);
+  --color-contrast-higher: white;
+}
+
+:root {
+  // body font size
+  --text-base-size: 1em;
+  font-size: var(--text-base-size);
+  // type scale
+  --text-scale-ratio: 1.5;
+  --text-xs: calc((1em / var(--text-scale-ratio)) / var(--text-scale-ratio));
+  --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
+  --text-md: calc(
+    var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio)
+  );
+  --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
+  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
+  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
+  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+}
+
+body {
+  background-color: var(--color-contrast-lower);
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 
+  @include breakpoint(3434px) {
+    --text-base-size: 1.25em;
+    --text-scale-ratio: 1.25;
+  }
+  */
